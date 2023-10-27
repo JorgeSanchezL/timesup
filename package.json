@@ -2,7 +2,7 @@
     "name": "time-s-up",
     "private": true,
     "version": "0.0.0",
-    "homepage": "https://JorgeSanchezL.github.io/timesup",
+    "homepage": "https://JorgeSanchezL.github.io/",
     "type": "module",
     "scripts": {
         "dev": "vite",
