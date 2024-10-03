@@ -15,7 +15,7 @@ export enum Round {
 }
 
 export const WORDS = [
-    "Jhonny Depp", "Antonio Banderas", "Brad Pitt", "Adam Sandler", "Harrison Ford", "Jet Li", "Al Pacino", "Scarface", "Frozen", "Hércules", "Aladdin", "El Dictador", "El Padrino", "Manzana", "Pizza", "Pato", "Montaña", "Mesa", "Montaña", "Pueblo", "Carretera", "Natos y Waor", "Bad Bunny", "AC/DC", "Nirvana", "Queen", "Bob Marley", "Juan Carlos I", "Pedro Sánchez", "Barco", "Espina", "Rosa", "Papel", "Avión", "Burguer King", "Pictionary", "Tenis", "Dani Parejo", "Hospital", "Jurassic Park"
+    "Jhonny Depp", "Antonio Banderas", "Brad Pitt", "Adam Sandler", "Harrison Ford", "Jet Li", "Al Pacino", "Scarface", "Frozen", "Hércules", "Aladdin", "El Dictador", "El Padrino", "Manzana", "Pizza", "Pato", "Montaña", "Mesa", "Montaña", "Pueblo", "Carretera", "Natos y Waor", "Bad Bunny", "AC/DC", "Nirvana", "Queen", "Bob Marley", "Juan Carlos I", "Pedro Sánchez", "Barco", "Espina", "Rosa", "Papel", "Avión", "Burguer King", "Pictionary", "Tenis", "Dani Parejo", "Manolo Lama", "Hospital", "Jurassic Park"
 ]
 
 /* export const WORDS = [
