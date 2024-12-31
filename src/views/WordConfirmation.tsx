@@ -1,4 +1,3 @@
-import { Button } from '@mui/material';
 import WordCheckbox from '../components/WordCheckbox';
 import { StoreContext } from '../store';
 import { useContext } from 'react';
@@ -13,7 +12,7 @@ function WordConfirmation(props: Props) {
     const { teams, currentTeam, nextTeam, setGameState, words: wordList, setRoundResults } = useContext(StoreContext)
 
     return (
-        <main>
+        <main className="word-confirmation">
             {wordList.words.map((word, index) => {
                 if (wordList.getWordState(word) === WordState.VIEWED_NOT_GUESSED) {
                     return (
@@ -29,8 +28,7 @@ function WordConfirmation(props: Props) {
                     )
                 } else return null
             })}
-            <Button variant='outlined' onClick={() => {
-
+            <button onClick={() => {
                 wordList.confirmWordList(currentTeam)
 
                 if (!wordList.wordsLeft) {
@@ -65,7 +63,7 @@ function WordConfirmation(props: Props) {
                 }
             }}>
                 Confirmar
-            </Button>
+            </button>
         </main>
     )
 }

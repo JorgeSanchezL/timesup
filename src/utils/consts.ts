@@ -14,9 +14,11 @@ export enum Round {
     ROUND_3 = 'ROUND_3',
 }
 
-export const WORDS = [
+export const WORDS = ["1", "2", "3", "4", "5"]
+
+/* export const WORDS = [
     "Jhonny Depp", "Antonio Banderas", "Brad Pitt", "Adam Sandler", "Harrison Ford", "Jet Li", "Al Pacino", "Scarface", "Frozen", "Hércules", "Aladdin", "El Dictador", "El Padrino", "Manzana", "Pizza", "Pato", "Montaña", "Mesa", "Montaña", "Pueblo", "Carretera", "Natos y Waor", "Bad Bunny", "AC/DC", "Nirvana", "Queen", "Bob Marley", "Juan Carlos I", "Pedro Sánchez", "Barco", "Espina", "Rosa", "Papel", "Avión", "Burguer King", "Pictionary", "Tenis", "Dani Parejo", "Manolo Lama", "Hospital", "Jurassic Park"
-]
+] */
 
 /* export const WORDS = [
     "Jhonny Depp", "Antonio Banderas", "Brad Pitt", "Adam Sandler", "Harrison Ford", "Jet Li"

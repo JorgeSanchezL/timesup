@@ -1,0 +1,35 @@
+.word-confirmation main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.word-confirmation div {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.word-confirmation button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.word-confirmation button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.word-confirmation button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

@@ -1,10 +1,8 @@
-import { GameState } from '../../utils/consts';
-import { Button, LinearProgress } from '@mui/material'
-import { Normalise } from '../../utils/functions'
-import { useContext, useEffect, useState } from 'react'
-import { CancelOutlined, CheckCircleOutlined } from '@mui/icons-material'
-import { StoreContext } from '../../store'
-import { Round as RoundEnum } from '../../utils/consts';
+import { useContext, useEffect, useState } from 'react';
+import { StoreContext } from '../store';
+import { GameState, Round as RoundEnum } from '../utils/consts';
+import { Normalise } from '../utils/functions';
+import './Round.css';
 
 function Round() {
     const { words: wordsInformation, currentTeam, time, gameState, setGameState, setRoundPlayed } = useContext(StoreContext)
@@ -46,35 +44,33 @@ function Round() {
     }, [wordsInformation.wordsLeft, timeLeft])
 
     return (
-        <main>
+        <main className="round">
             <h1>{currentTeam}</h1>
-            <LinearProgress variant="determinate" value={Normalise(timeLeft)} />
+            <div className="progress-bar">
+                <div className="progress" style={{ width: `${Normalise(timeLeft)}%` }}></div>
+            </div>
             <p>{timeLeft}</p>
             <p>{wordsInformation.pointedWord}</p>
-            <Button variant='text' onClick={() => {
-                wordsInformation.guessWord()
+            <button onClick={() => {
+                wordsInformation.guessWord();
                 if (wordsInformation.wordsLeft) {
-                    wordsInformation.nextWord()
+                    wordsInformation.nextWord();
                 }
-            }} >
-                <CheckCircleOutlined fontSize='large' />
-            </Button>
-            {
-                gameState !== GameState.ROUND_1 ?
-                    <Button variant='text' onClick={() => {
-                        wordsInformation.viewWord()
-                        if (wordsInformation.wordsLeft) {
-                            wordsInformation.nextWord()
-                        }
-                    }} >
-                        <CancelOutlined fontSize='large' />
-                    </Button>
-                    :
-                    <></>
-            }
-
+            }}>
+                ✔
+            </button>
+            {gameState !== GameState.ROUND_1 && (
+                <button onClick={() => {
+                    wordsInformation.viewWord();
+                    if (wordsInformation.wordsLeft) {
+                        wordsInformation.nextWord();
+                    }
+                }}>
+                    ✖
+                </button>
+            )}
         </main>
-    )
+    );
 }
 
-export default Round
+export default Round;

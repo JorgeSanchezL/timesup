@@ -39,7 +39,7 @@ export const StoreProvider: React.FC<React.PropsWithChildren<{}>> = ({ children 
 
     const [teams, internalSetTeams] = useState<string[]>(["MockTeam1", "MockTeam2"])
     const [currentTeam, setCurrentTeam] = useState<string>(teams[0])
-    const [time, setTime] = useState<number>(500)
+    const [time, setTime] = useState<number>(45)
     const [gameState, setGameState] = useState<GameState>(GameState.GAME_NOT_STARTED)
     const [roundResults, internalSetRoundResults] = useState([{}])
     const [roundPlayed, setRoundPlayed] = useState(Round.ROUND_1)

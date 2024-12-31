@@ -1,33 +1,46 @@
 import { GameState } from './utils/consts';
-import './App.css'
-import { StoreContext } from './store'
-import { useContext } from 'react'
-import Round from './views/rounds/Round.tsx';
+import { StoreContext } from './store';
+import { useContext } from 'react';
+import Round from './views/Round.tsx';
 import WordConfirmation from './views/WordConfirmation.tsx';
 import Summary from './views/Summary.tsx';
 import GameEnded from './views/GameEnded.tsx';
 import StartingView from './views/StartingView.tsx';
 
+import './App.css';
+
 function App() {
+    const { gameState, roundPlayed } = useContext(StoreContext);
 
-    const { gameState, roundPlayed } = useContext(StoreContext)
-
+    let content;
     switch (gameState) {
         case GameState.GAME_NOT_STARTED:
-            return <StartingView />
+            content = <StartingView />;
+            break;
         case GameState.ROUND_1:
         case GameState.ROUND_2:
         case GameState.ROUND_3:
-            return <Round />
+            content = <Round />;
+            break;
         case GameState.CHECKING:
-            return <WordConfirmation round={roundPlayed} />
+            content = <WordConfirmation round={roundPlayed} />;
+            break;
         case GameState.SUMMARY:
-            return <Summary round={roundPlayed} />
+            content = <Summary round={roundPlayed} />;
+            break;
         case GameState.GAME_ENDED:
-            return <GameEnded />
+            content = <GameEnded />;
+            break;
         default:
-            return <WordConfirmation round={roundPlayed} />
+            content = <WordConfirmation round={roundPlayed} />;
+            break;
     }
+
+    return (
+        <div className="app-container">
+            {content}
+        </div>
+    );
 }
 
-export default App
+export default App;

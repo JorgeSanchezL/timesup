@@ -1,5 +1,4 @@
 
-import { Button } from '@mui/material'
 import { useContext } from 'react'
 import { StoreContext } from '../store'
 import { GameState, Round, WORDS } from '../utils/consts'
@@ -29,7 +28,7 @@ function Summary(props: Props) {
     const keys = Object.keys(roundResults[round])
 
     return (
-        <main>
+        <main className="summary">
             {
                 keys.map((key, index) => {
                     return (
@@ -40,7 +39,7 @@ function Summary(props: Props) {
                     )
                 })
             }
-            <Button variant='text' onClick={() => {
+            <button onClick={() => {
                 setWords(new WordList(WORDS))
                 switch (props.round) {
                     case Round.ROUND_1:
@@ -55,7 +54,7 @@ function Summary(props: Props) {
                 }
             }} >
                 Continuar
-            </Button>
+            </button>
         </main>
     )
 }
